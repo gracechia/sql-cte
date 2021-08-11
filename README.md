@@ -48,7 +48,7 @@ LEFT JOIN customers
        ON customers.id = customer_orders.customer_id
 ```
 
-This uses a CTE:
+This uses a CTE instead:
 ```
 WITH customer_orders AS (
   SELECT
@@ -65,6 +65,7 @@ SELECT
 FROM customer_orders
 LEFT JOIN customers
        ON customers.id = customer_orders.customer_id
+```
 
 ## Let's try using CTEs in BigQuery
 Log in to Google BigQuery: https://cloud.google.com/bigquery
