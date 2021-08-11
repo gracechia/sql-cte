@@ -113,7 +113,7 @@ WITH favourites_min AS (
         users.id,
         users.display_name
     HAVING
-        no_of_favorites > 50
+        no_of_favorites > 50 -- users who received more than 50 favourites
 ),
 
 comment_min AS (
@@ -128,14 +128,14 @@ comment_min AS (
         users.id,
         users.display_name
     HAVING
-        no_of_comments > 20
+        no_of_comments > 20 -- users who received more than 20 comments
 )
 
 SELECT
     id,
     display_name
 FROM favourites_min
-UNION ALL
+UNION ALL -- union to get users who received more than 50 favourites OR 20 comments
 SELECT
     id,
     display_name
